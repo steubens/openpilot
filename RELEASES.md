@@ -1,3 +1,25 @@
+Version sl-25.01
+========================
+- Versioning is year (25) and update number (01)
+- Added my tweaks from 2024 for my 2017 volt premier
+  - Driver monitoring nerfed (will get you BANNED from comma servers!)
+- Analyzed code w Claude code and had it write a ref doc
+- Added custom opParams defaults system
+  - New script: `scripts/apply_custom_defaults.sh` to override opParams defaults without modifying code
+  - Custom defaults applied at boot before manager starts
+  - Original defaults remain in `common/op_params.py` for reference and merge compatibility
+  - Pre-configured 16 parameters for personal setup:
+    - MISC: offroad_shutdown_time, car_12v_pause_charging_v
+    - Follow Profile: stop_distance_offset_m
+    - Lane Change: minimum_speed_mph
+    - MADS One-Pedal: decel_ms2, regen_paddle_decel_factor, one_time_stop_decel_factor, rate_ramp_up
+    - Lane Position: offset_maximum_m
+    - Extended Radar: oncoming_timeout_s, ongoing_timeout_s, min_traffic_moving_speed_mph
+    - Lateral Tuning: do_override, steer_actuator_delay_s, TRX_use_NN_FF, TRX_kf
+  - Easy to version control and survives software updates
+
+
+
 Version tw-0.8.12-22 (2025-06-28)
 ========================
 - Add's new lead+1 based planning if extended radar is enabled

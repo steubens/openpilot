@@ -193,6 +193,11 @@ function launch {
     tici_init
   fi
 
+  # apply custom opParams defaults (before manager starts)
+  if [ -f "$DIR/scripts/apply_custom_defaults.sh" ]; then
+    bash "$DIR/scripts/apply_custom_defaults.sh"
+  fi
+
   # write tmux scrollback to a file
   tmux capture-pane -pq -S-1000 > /tmp/launch_log
 
